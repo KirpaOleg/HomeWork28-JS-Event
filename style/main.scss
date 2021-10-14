@@ -1,0 +1,88 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  text-align: center;
+  margin-top: 10px;
+}
+button {
+  height: 40px;
+  width: 100px;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.inner {
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.one {
+  margin-left: 20px;
+}
+.two {
+  position: relative;
+}
+.main {
+  height: 500px;
+  width: 500px;
+  border: 1px solid black;
+}
+.box {
+  height: 50px;
+  width: 50px;
+  background-color: red;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.move-left {  
+  animation: moveLeft 5s linear;
+}
+.move-right {
+  animation: moveRight 5s linear;
+}
+.move-up {
+  animation: moveUp 5s linear;
+}
+.move-down {
+  animation: moveDown 5s linear;
+}
+.change-color {
+  background-color: green;
+}
+.change-size {
+  animation: changeSize 5s linear;
+}
+@keyframes moveLeft {
+  100% {
+    transform: translateX(-250px);
+  }
+}
+@keyframes moveRight {
+  100% {
+    transform: translateX(200px);
+  } 
+}
+@keyframes moveUp {
+  100% {
+    transform: translateY(-250px);
+  } 
+}
+@keyframes moveDown {
+  100% {
+    transform: translateY(200px);
+  } 
+}
+@keyframes changeSize {
+  100% {
+    transform: scale(5);
+  } 
+}
+
+
