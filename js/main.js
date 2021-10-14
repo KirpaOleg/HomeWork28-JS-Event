@@ -44,17 +44,20 @@ btnRight.addEventListener('mouseup', () => {
 
 const handleKeysDown = (event) => {
   console.log(`Кнопка ${event.key} Код ${event.keyCode}`);
+  const {top, left} = box.getBoundingClientRect();
   if (event.keyCode === 38) {
+    box.style.top = `${top}px`;
     box.classList.add('move-up');
   }
   if (event.keyCode === 37) {
+    box.style.left = `${left}px`;
     box.classList.add('move-left');
   }
   if (event.keyCode === 40) {
-    box.classList.add('move-down');
+     box.classList.add('move-down');
   }
   if (event.keyCode === 39) {
-    box.classList.add('move-right');
+     box.classList.add('move-right');
   }
   if (event.keyCode === 32) {
     box.classList.add('change-size');
@@ -78,15 +81,12 @@ const handleKeysUp = (event) => {
     box.classList.remove('move-right');
   } 
   if (event.keyCode === 32) {
-    // let rect = box.getBoundingClientRect();
-    // let boxStyles = getComputedStyle(box);
-    // boxStyles.width = rect.width;
-    // // box.style.height = rect.height;
+    const {width, height} = box.getBoundingClientRect();
+    box.style.width = `${width}px`;
+    box.style.height = `${height}px`;
 
-    // console.log(boxStyles.width);
-    // console.log(rect.width);
-    // // console.log(rect.height);
-
+    console.log(width, height);
+    console.log(box.getBoundingClientRect());
     box.classList.remove('change-size');
   }
 
